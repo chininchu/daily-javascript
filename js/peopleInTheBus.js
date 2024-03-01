@@ -34,7 +34,6 @@ let number = (busStops) => {
 }
 
 
-console.log(number([[3, 0], [9, 1], [4, 8], [12, 2], [6, 1], [7, 8]]));
 
 
 
