@@ -3,9 +3,7 @@
 let number = (busStops) => {
 
 
-    let totalOntheBus = 0;
-
-    let totalOftheBus = 0;
+    let totalOnOrOffTheBus = 0;
 
 
     for (let i = 0; i < busStops.length; i++) {
@@ -14,15 +12,14 @@ let number = (busStops) => {
         for (let j = 0; j < 2; j++) {
 
 
-            if (j === 0) {
-
-                totalOntheBus += busStops[i][j];
-
-
-            } else if (j === 1) {
-
-
-                totalOftheBus += busStops[i][j];
+            switch (j) {
+                case 0:
+                    totalOnOrOffTheBus += busStops[i][j];
+                    break;
+                case 1:
+                    totalOnOrOffTheBus -= busStops[i][j];
+                    break;
+                default:
             }
 
 
@@ -31,7 +28,7 @@ let number = (busStops) => {
 
     }
 
-    return totalOntheBus - totalOftheBus;
+    return totalOnOrOffTheBus;
 
 
 }
