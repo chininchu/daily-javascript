@@ -8,14 +8,11 @@ Eg: [0, 0, 0, 1] is treated as 0001 which is the binary representation of 1.*/
 const binaryArrayToNumber = arr => {
 
     // Convert Array to a String
+    let arrayToString = arr.join('');
 
-    let arraytoString = arr.join('');
 
-
-    // Convert binary string to integer
-    let integerValue = parseInt(arraytoString, 2);
-
-    return integerValue;
+    // Convert binary to integer
+    return parseInt(arrayToString, 2);
 
 
 };
