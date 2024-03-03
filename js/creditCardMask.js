@@ -12,21 +12,7 @@ const maskify = (cc) => {
     const result = cc.split("").reduce((accum, currentValue, i, array) => {
 
 
-        let originalArray = array.length;
-
-        let finalArray = accum.length;
-
-
-        if (originalArray - finalArray <= 4) {
-
-
-            accum.push(currentValue);
-
-
-        } else {
-
-            accum.push("#");
-        }
+        let differenceBetweenLength = (array.length - accum.length) <= 4 ? accum.push(currentValue) : accum.push("#");
 
 
         return accum;
