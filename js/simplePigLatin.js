@@ -7,15 +7,49 @@ Move the first letter of each word to the end of it, then add "ay" to the end of
 function pigIt(str) {
 
     let splitStr = str.split("");
-    splitStr.unshift(" ");
 
-    console.log(splitStr[0]);
+
+    // let firstLetter = "";
+
+
+    let result = "";
+
 
     for (let i = 0; i < splitStr.length; i++) {
 
 
+        if (i === 0) {
+
+            // firstLetter.push(splitStr[i] + "ay");
+
+            // result += splitStr[i] + "ay";
+
+            result += splitStr[i + 1];
+
+
+            i++;
+
+
+        } else if (splitStr[i] !== " ") {
+
+            result += splitStr[i];
+
+
+        } else if (splitStr[i] === " ") {
+
+            // firstLetter.push(splitStr[i + 1] + "ay");
+
+            result += splitStr[i + 1] + "ay";
+            i++
+
+
+        }
+
 
     }
+
+
+    return result;
 
 
 }
