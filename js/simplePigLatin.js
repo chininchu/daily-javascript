@@ -6,50 +6,19 @@ Move the first letter of each word to the end of it, then add "ay" to the end of
 
 function pigIt(str) {
 
-    let splitStr = str.split("");
 
+    let words = str.split(" ");
 
-    // let firstLetter = "";
-
-
-    let result = "";
-
-
-    for (let i = 0; i < splitStr.length; i++) {
-
-
-        if (i === 0) {
-
-            // firstLetter.push(splitStr[i] + "ay");
-
-            // result += splitStr[i] + "ay";
-
-            result += splitStr[i + 1];
-
-
-            i++;
-
-
-        } else if (splitStr[i] !== " ") {
-
-            result += splitStr[i];
-
-
-        } else if (splitStr[i] === " ") {
-
-            // firstLetter.push(splitStr[i + 1] + "ay");
-
-            result += splitStr[i + 1] + "ay";
-            i++
-
-
+    return words.map(word => {
+        // Check if the word is actually a word (and not punctuation) using regex
+        if (word.match(/[A-Za-z]/)) {
+            // Move the first character to the end and add 'ay'
+            return word.substring(1) + word.charAt(0) + 'ay';
+        } else {
+            // If it's punctuation, return it unchanged
+            return word;
         }
-
-
-    }
-
-
-    return result;
+    }).join(" "); // Join the transformed words back into a string
 
 
 }
