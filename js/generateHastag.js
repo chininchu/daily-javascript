@@ -14,6 +14,9 @@ If the input or the result is an empty string it must return false.*/
 
 function generateHashtag(str) {
 
+    // Check if the input is empty
+
+
     // split the string
 
     const splitString = str.split(" ");
@@ -40,6 +43,7 @@ function generateHashtag(str) {
             } else {
 
                 finalResult += splitStr[j];
+
             }
 
 
@@ -48,10 +52,19 @@ function generateHashtag(str) {
 
     }
 
+    // Check if final result is more than 140 characters
+
+    if (finalResult.length > 140) {
+
+        return false
+
+
+    }
+
+
     return finalResult;
 
 
 }
 
 
-console.log(generateHashtag("hello world"));
